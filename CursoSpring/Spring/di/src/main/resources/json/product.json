@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Pantalón azul ",
+        "price": 400.00
+    },
+    {
+        "id": 2,
+        "name": "Zapatos negros",
+        "price": 900.00
+    },
+    {
+        "id": 3,
+        "name": "Audífonos",
+        "price": 350.00
+    },
+    {
+        "id": 4,
+        "name": "Dock de carga",
+        "price": 625.0
+    }
+]
