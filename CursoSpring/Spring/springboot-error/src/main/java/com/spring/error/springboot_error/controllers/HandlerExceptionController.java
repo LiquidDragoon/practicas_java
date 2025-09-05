@@ -1,6 +1,8 @@
 package com.spring.error.springboot_error.controllers;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,5 +37,16 @@ public class HandlerExceptionController {
         error.setStatus(HttpStatus.NOT_FOUND.value());
 
         return ResponseEntity.status(404).body(error);
+    }
+
+    @ExceptionHandler(NumberFormatException.class)
+    public Map<String, String> numberFormatException(Exception ex){
+        Map<String, String> error = new HashMap<>();
+        error.put("date", new Date().toString());
+        error.put("error", "Dato inválido o incorrecto, no tiene formato de número");
+        error.put("message", ex.getMessage());
+        error.put("status", HttpStatus.INTERNAL_SERVER_ERROR.value()+"");
+
+        return error;
     }
 }
